@@ -13,3 +13,6 @@ Requirements: your template must have Bootstrap 3 loaded and Font-Awesome 4.x.
 ## Joomla! Components
 * Content (done: articles)
 * Users (done: login/remind/reset)
+
+## Joomla! Layouts
+* Messages
