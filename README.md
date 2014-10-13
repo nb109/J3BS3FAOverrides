@@ -8,5 +8,5 @@ This is a set of Joomla 3.x template overrides for use with Bootstrap 3.x. and F
 * Search
 
 ## Joomla! Components
-* Content (done: Articles)
+* Content (done: articles)
 * Users (done: login/remind/reset)
