@@ -15,7 +15,7 @@ defined('_JEXEC') or die;
 	<?php
 	if ($params->get('showHere', 1))
 	{
-		echo '<li class="active">' . JText::_('MOD_BREADCRUMBS_HERE') . '&nbsp;&nbsp;<a href="/">Home</a></li>';
+		echo '<li class="active" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">' . JText::_('MOD_BREADCRUMBS_HERE') . '&nbsp;&nbsp;<a href="/" itemprop="url"><span itemprop="title">Home</span></a></li>';
 	}
 
 	// Get rid of duplicated entries on trail including home page when using multilanguage
@@ -41,14 +41,14 @@ defined('_JEXEC') or die;
 	if ($key != $last_item_key)
 	{
 		// Render all but last item - along with separator
-		echo '<li>&nbsp;&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;&nbsp;';
+		echo '<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">&nbsp;&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;&nbsp;';
 		if (!empty($item->link))
 		{
-			echo '<a href="' . $item->link . '" class="pathway">' . $item->name . '</a>';
+			echo '<a href="' . $item->link . '" class="pathway" itemprop="url"><span itemprop="title">' . $item->name . '</span></a>';
 		}
 		else
 		{
-			echo '<span>' . $item->name . '</span>';
+			echo '<span itemprop="title">' . $item->name . '</span>';
 		}
 
 		echo '</li>';
@@ -56,8 +56,8 @@ defined('_JEXEC') or die;
 	elseif ($show_last)
 	{
 		// Render last item if reqd.
-		echo '<li class="active">&nbsp;&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;&nbsp;';
-		echo '<span>' . $item->name . '</span>';
+		echo '<li class="active" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">&nbsp;&nbsp;<i class="fa fa-chevron-right"></i>&nbsp;&nbsp;';
+		echo '<span itemprop="title">' . $item->name . '</span>';
 		echo '</li>';
 	}
 	endforeach; ?>
